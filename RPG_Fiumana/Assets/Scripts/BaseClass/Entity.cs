@@ -10,8 +10,9 @@ public class Entity : MapObject
 
     private void Start()
     {
-        Debug.Log("Starting Stats");
+        //Debug.Log("Starting Stats");
         AttachPerk(startingStats);
+        GameplayManager.Instance.RegisterEntity(this); 
     }
 
     private void Update()

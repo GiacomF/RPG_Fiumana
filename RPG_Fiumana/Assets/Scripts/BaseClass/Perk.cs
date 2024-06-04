@@ -7,13 +7,13 @@ public class Perk : PerkStructure
     public PerkValuesScriptableObject perkModifiersArray;
     public PerkValuesScriptableObject updatePerkModifiersArray;
 
-    private void Start()
+    private void Awake()
     {
         //Aggiungiamo alla lista i Modifier ricavati dallo scriptable object
         foreach (Modifier mod in perkModifiersArray.allModifiers)
         {
             perkModifiers.Add(mod);
-            Debug.Log(mod.statToModify + " Modification Added");
+            //Debug.Log(mod.statToModify + " Modification Added");
         }
 
         foreach (Modifier mod in updatePerkModifiers)

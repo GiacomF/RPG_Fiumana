@@ -9,7 +9,7 @@ public class MapGrid : MonoBehaviour
     public float cellSize;
 
 
-    private void Start()
+    private void Awake()
     {
         GenerateGrid();
     }
@@ -21,7 +21,7 @@ public class MapGrid : MonoBehaviour
                 // Calcola la posizione per ogni cubo nella griglia
                 Vector3 position = new Vector3(x * cellSize, 0, z * cellSize);
                 // Crea un nuovo cubo
-                GameObject instantiated = Instantiate(cubePrefab, position, Quaternion.identity);
+                GameObject instantiated = Instantiate(cubePrefab, position, Quaternion.identity, transform);
                 Cell cell = instantiated.GetComponent<Cell>();
                 cell.tileSpecs.coords = new Vector2Int(x, z);
                 cell.GenerateVisual(instantiated.transform.position, instantiated.transform);

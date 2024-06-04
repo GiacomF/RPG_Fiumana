@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4164557877312237117}
   - component: {fileID: 2169981853774524962}
   - component: {fileID: 6428281515165006631}
-  - component: {fileID: 4026362110370738429}
+  - component: {fileID: 1998858478718748422}
   m_Layer: 0
   m_Name: Adventurer
   m_TagString: Untagged
@@ -107,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4026362110370738429
+--- !u!114 &1998858478718748422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,12 +116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5159419846050454316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f191c0c7bc0fed147bb2e48b0e7b2719, type: 3}
+  m_Script: {fileID: 11500000, guid: a0d887a4235d73c47ae6ff2bb6b14d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   statsList: []
   currentlyAttachedPerks: []
-  startingStats: {fileID: 6074990971696765479}
+  startingStats: {fileID: 1767097072933030722}
+  coords: {x: 0, y: 0}
 --- !u!1 &5350534433247147867
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5763019104971055309}
-  - component: {fileID: 6074990971696765479}
+  - component: {fileID: 1767097072933030722}
   m_Layer: 0
   m_Name: StartingStats
   m_TagString: Untagged
@@ -154,7 +155,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 549526141347726723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6074990971696765479
+--- !u!114 &1767097072933030722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,9 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5350534433247147867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 368217d3848d4cf41abcc0a9bd80369d, type: 3}
+  m_Script: {fileID: 11500000, guid: e31efed03c7747643b926c9063a16e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   perkModifiers: []
-  perkModifiersArray: {fileID: 11400000, guid: e21abd9b84e9dbe4a9a70e17e2e6d3b8, type: 2}
-  targetEntity: {fileID: 4026362110370738429}
+  updatePerkModifiers: []
+  perkModifiersArray: {fileID: 11400000, guid: f37a901d5c663b64c9b818ec66971d39, type: 2}
+  updatePerkModifiersArray: {fileID: 0}

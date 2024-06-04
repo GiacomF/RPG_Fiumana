@@ -84,6 +84,7 @@ public class StatsEngine
     {
         if(attachedPerks.Contains(perkToAttach))
         return;
+        //Debug.Log(perkToAttach);
         //Aggiunge il perk alla lista attachedPerks     
         attachedPerks.Add(perkToAttach);
         //Setta quale complesso di statistiche andrà a modificare
