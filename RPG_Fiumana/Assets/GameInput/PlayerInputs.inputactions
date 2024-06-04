@@ -1,0 +1,54 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "GameplayInput",
+            "id": "6e2804b5-94ec-4414-8301-9317315aef74",
+            "actions": [
+                {
+                    "name": "LeftButtonClick",
+                    "type": "Button",
+                    "id": "7d605bd4-402f-4ee0-9f14-01d18c728233",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GenerateNewMap",
+                    "type": "Button",
+                    "id": "de2bf4a8-840c-4f3c-b3c0-0a9f2631100a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2a3a298f-299d-4d33-b4fe-671c5a524212",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftButtonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8856a29-f52e-49d0-832c-f9d28af03bc5",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GenerateNewMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
