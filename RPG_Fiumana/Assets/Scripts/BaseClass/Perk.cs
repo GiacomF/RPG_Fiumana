@@ -13,7 +13,7 @@ public class Perk : PerkStructure
         foreach (Modifier mod in perkModifiersArray.allModifiers)
         {
             perkModifiers.Add(mod);
-            //Debug.Log(mod.statToModify + " Modification Added");
+            Debug.Log($"Modifier Added: {mod.statToModify} - {mod.type} - {mod.value}");
         }
 
         foreach (Modifier mod in updatePerkModifiers)

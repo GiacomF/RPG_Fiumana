@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ae5417235173447bd08cf7de6b701d, type: 3}
-  m_Name: Sword
+  m_Name: Building
   m_EditorClassIdentifier: 
   allModifiers:
-  - statToModify: 1
-    type: 0
-    value: 3
+  - statToModify: 0
+    type: 1
+    value: 0
+  - statToModify: 0
+    type: 1
+    value: 0
+  - statToModify: 0
+    type: 1
+    value: 0

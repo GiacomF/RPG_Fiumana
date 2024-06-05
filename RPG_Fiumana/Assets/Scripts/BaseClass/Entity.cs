@@ -8,7 +8,7 @@ public class Entity : MapObject
     public Perk startingStats;
     public Vector2Int coords;
 
-    private void Start()
+    private void Awake()
     {
         //Debug.Log("Starting Stats");
         AttachPerk(startingStats);

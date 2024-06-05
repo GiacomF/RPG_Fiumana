@@ -70,12 +70,12 @@ public class StatsEngine
         maxHealth
     }
 
-    public const int defaultValue = 0;
+    public const int defaultValue = 1;
     public Dictionary<RPGStat, float> statistics { get; private set; } = new Dictionary<RPGStat, float>();
     //Creaimo una nuova lista di perk. Definiamo cos'è un perk più in basso nello script
     //I perk contenuti in questo StatsEngine serviranno dopo nel metodo UpdateStats()
     public List<Perk> attachedPerks = new List<Perk>();
-    private const int minStatValue = 1;
+    private const int minStatValue = 0;
     private const int maxStatValue = 100;
     //#endregion
 

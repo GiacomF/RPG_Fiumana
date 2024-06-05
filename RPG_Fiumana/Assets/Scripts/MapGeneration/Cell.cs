@@ -29,7 +29,7 @@ public class Cell : MonoBehaviour
 
     private void Awake()
     {
-        int randomTile = UnityEngine.Random.Range(0, terrainSpecs.Length - 1);
+        int randomTile = UnityEngine.Random.Range(0, terrainSpecs.Length);
         tileSpecs = terrainSpecs[randomTile];
     }
 

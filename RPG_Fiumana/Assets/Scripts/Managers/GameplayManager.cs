@@ -28,7 +28,7 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
-        activeEntityInt = 0;
+        activeEntityInt = 2;
 
         for (int i = 0; i < Map.transform.childCount; i++)
         {
@@ -38,7 +38,7 @@ public class GameplayManager : MonoBehaviour
             coordsToTiles.Add(thisCellCoords, thisCellScript);
         }
 
-        Debug.Log(coordsToTiles.Count);
+        //Debug.Log(coordsToTiles.Count);
     }
 
     public void Update()
@@ -49,6 +49,7 @@ public class GameplayManager : MonoBehaviour
     public void RegisterEntity(Entity entity)
     {
         entities.Add(entity);
+        entity.transform.position = new Vector3(entity.coords.x, upOffset, entity.coords.y);
     }
 
     public void MoveEntity(Vector2Int destination)
@@ -56,9 +57,15 @@ public class GameplayManager : MonoBehaviour
         //Debug.Log("Number of entities: " + entities.Count);
         if(coordsToTiles.TryGetValue(destination, out Cell cell) == true)
         {
+            switch (cell.tileSpecs.type)
+            {
+                case Cell.TerrainType.Water:
+                return;
+            }
+
             GameObject character = GetCurrentlyActiveEntity().gameObject;
-            
             character.transform.position = Vector3.Slerp(GetCurrentlyActiveEntity().gameObject.transform.position, new Vector3(destination.x, upOffset, destination.y), slerpInterpolationTime);
+            AttachTerrainPerks(cell);
         }
     }
 
@@ -89,6 +96,20 @@ public class GameplayManager : MonoBehaviour
                 Debug.Log(cellInfo.tileSpecs.coords);
                 MoveEntity(cellInfo.tileSpecs.coords);
             }
+        }
+    }
+
+    private void AttachTerrainPerks(Cell cell)
+    {
+        Entity entity = GetCurrentlyActiveEntity();
+        Cell.TerrainSpecs thisTileSpecs = cell.tileSpecs;
+        if(thisTileSpecs.terrainsPerks.Count == 0)
+            return;
+            Debug.Log(thisTileSpecs.terrainsPerks.Count);
+        foreach (Perk perk in thisTileSpecs.terrainsPerks)
+        {
+            Debug.Log(perk.perkModifiers.Count);
+            entity.AttachPerk(perk);
         }
     }
 }
