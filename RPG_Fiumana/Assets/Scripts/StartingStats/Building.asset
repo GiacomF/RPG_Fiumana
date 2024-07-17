@@ -15,10 +15,13 @@ MonoBehaviour:
   allModifiers:
   - statToModify: 0
     type: 1
-    value: 0
-  - statToModify: 0
+    value: 1
+  - statToModify: 1
     type: 1
-    value: 0
-  - statToModify: 0
+    value: 1
+  - statToModify: 2
     type: 1
-    value: 0
+    value: 1
+  - statToModify: 3
+    type: 1
+    value: 1

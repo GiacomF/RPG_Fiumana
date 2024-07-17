@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6812842153248477488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8920483230710383831}
+  - component: {fileID: 8214271330926205983}
+  - component: {fileID: 326157198024451717}
+  m_Layer: 0
+  m_Name: CellPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8920483230710383831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812842153248477488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.784572, y: 0.08318257, z: 0.1200366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8214271330926205983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812842153248477488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5aea25e7b3e0194fbc2c7192caa05a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainSpecs:
+  - coords: {x: 0, y: 0}
+    type: 0
+    traverseCost: 1
+    terrainsPerks:
+    - {fileID: 7947614642145158469, guid: 1a175773eebe23a40a5f934b73444299, type: 3}
+    terrainPrefab: {fileID: 3066844893473195918, guid: a0e1022886ffb824fbe3085a5832545f, type: 3}
+  - coords: {x: 0, y: 0}
+    type: 1
+    traverseCost: 3
+    terrainsPerks:
+    - {fileID: 2593555434004157249, guid: 350cea7785d934e47b9190453b38fbc9, type: 3}
+    terrainPrefab: {fileID: 3066844893473195918, guid: c76e4b48f3069af449ba7be2d45d6704, type: 3}
+  - coords: {x: 0, y: 0}
+    type: 2
+    traverseCost: 2
+    terrainsPerks:
+    - {fileID: 6316321958028770296, guid: c8a2d9a47c90bbb4585f17ba17e330fd, type: 3}
+    terrainPrefab: {fileID: 3066844893473195918, guid: cc16868f1b8fb19498ec8caf46108c91, type: 3}
+  - coords: {x: 0, y: 0}
+    type: 3
+    traverseCost: 1
+    terrainsPerks:
+    - {fileID: 1806844046210247041, guid: 896b81ff798f71640ae53cdda6590b63, type: 3}
+    terrainPrefab: {fileID: 3066844893473195918, guid: 8ddd392e4538c3b4c8080a14f7ec4e49, type: 3}
+  tileSpecs:
+    coords: {x: 0, y: 0}
+    type: 0
+    traverseCost: 0
+    terrainsPerks: []
+    terrainPrefab: {fileID: 0}
+--- !u!65 &326157198024451717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812842153248477488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

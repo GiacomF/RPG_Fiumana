@@ -23,7 +23,7 @@ public class MapObject : MonoBehaviour, IPerkable
         }
     }
 
-    [SerializeField] List<Stat> statsList = new List<Stat>();
+    [SerializeField] public List<Stat> statsList = new List<Stat>();
     [SerializeField] List<Perk> currentlyAttachedPerks;
 
     public void AttachPerk(Perk perkToAttach)
@@ -48,7 +48,20 @@ public class MapObject : MonoBehaviour, IPerkable
         statsList.Clear();
         foreach(KeyValuePair<RPGStat, float> kvp in stats.statistics)
         {
-            statsList.Add(new Stat(kvp.Key.ToString(), GetStatValue(kvp.Key)));
+            if(kvp.Key == RPGStat.Actions)
+            {
+                statsList.Add(new Stat(kvp.Key.ToString(), GetStatValue(kvp.Key) - stats.accumulatedMovementCost));
+            }
+            else if(kvp.Key == RPGStat.maxHealth)
+            {
+                float currentMaxHealth = GetStatValue(kvp.Key);
+                float newMaxHealth = currentMaxHealth - stats.accumulatedHealthLoss;
+                statsList.Add(new Stat(kvp.Key.ToString(), newMaxHealth));
+            }
+            else
+            {
+                statsList.Add(new Stat(kvp.Key.ToString(), GetStatValue(kvp.Key)));
+            }
         }
         currentlyAttachedPerks = stats.attachedPerks;
     }
@@ -59,7 +72,7 @@ public class MapObject : MonoBehaviour, IPerkable
 
 //Creiamo e definiamo cos'è uno StatsEngine
 public class StatsEngine
-{   //#region tutti i valori contenuti nello StatsEngine
+{   
     //L'enum ci definisce tutte le potenziali statistiche, è utile per associare un valore mnemonico ad uno numerico
     [Serializable]
     public enum RPGStat
@@ -70,6 +83,8 @@ public class StatsEngine
         maxHealth
     }
 
+    public float accumulatedMovementCost = 0;
+    public float accumulatedHealthLoss = 0;
     public const int defaultValue = 1;
     public Dictionary<RPGStat, float> statistics { get; private set; } = new Dictionary<RPGStat, float>();
     //Creaimo una nuova lista di perk. Definiamo cos'è un perk più in basso nello script
@@ -145,6 +160,16 @@ public class StatsEngine
     public float Get(StatsEngine.RPGStat stat)
     {
         return statistics[stat];
+    }
+
+    public void ApplyMovementCost(float amount)
+    {
+        accumulatedMovementCost += amount;
+    }
+
+    public void ApplyHealthLoss(float amount)
+    {
+        accumulatedHealthLoss += amount;
     }
 }
 
